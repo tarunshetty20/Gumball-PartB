@@ -1,20 +1,26 @@
 public class Main {
 
     public static void main(String[] args) {
-        GumballMachine gumballMachine = new GumballMachine(5);
 
-        System.out.println(gumballMachine);
+        ///// Pass parameters (number_of_balls, 25, 0) for the first gumball machine
+        ///// Pass parameters (number_of_balls, 50, 0) for the second gumball machine
+        ///// Pass parameters (number_of_balls, 50, 1) for the third gumball machine
 
-        gumballMachine.insertQuarter();
+        GumballMachine gumballMachine = new GumballMachine(100,50,1);
+        //Pass parameters and check for the first machine
+//        gumballMachine.insertQuarter(25);
+//        gumballMachine.turnCrank();
+
+        //Pass parameters and check for the second machine
+//        gumballMachine.insertQuarter(25);
+//        gumballMachine.insertQuarter(25);
+//        gumballMachine.turnCrank();
+
+        //Pass parameters and check for the third machine
+        gumballMachine.insertQuarter(25);
+        gumballMachine.insertQuarter(25);
         gumballMachine.turnCrank();
 
-        System.out.println(gumballMachine);
 
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-
-        System.out.println(gumballMachine);
     }
 }

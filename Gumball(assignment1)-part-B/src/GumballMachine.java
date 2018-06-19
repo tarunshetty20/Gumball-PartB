@@ -7,19 +7,40 @@ public class GumballMachine {
 
     State state = soldOutState;
     int count = 0;
-    public GumballMachine(int numberGumballs) {
+    int machinetype;
+    int machine;
+    private boolean has_quarter;
+    public GumballMachine(int numberGumballs, int machinetype, int machine) {
         soldOutState = new SoldOutState(this);
         noQuarterState = new NoQuarterState(this);
         hasQuarterState = new HasQuarterState(this);
         soldState = new SoldState(this);
+        this.machinetype=machinetype;
+        this.machine= machine;
         this.count = numberGumballs;
         if (numberGumballs > 0) {
             state = noQuarterState;
         }
     }
 
-    public void insertQuarter() {
-        state.insertQuarter();
+    public boolean isHas_quarter() {
+        return has_quarter;
+    }
+
+    public void setHas_quarter(boolean has_quarter) {
+        this.has_quarter = has_quarter;
+    }
+
+    public int getMachinetype() {
+        return machinetype;
+    }
+
+    public int getMachine() {
+        return machine;
+    }
+
+    public void insertQuarter(int coin) {
+        state.insertQuarter(coin);
     }
 
     public void ejectQuarter() {
